@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
+import { Button, Checkbox, Form, Input } from 'antd';
 
 export const Login = () => {
     const auth = useContext(AuthContext);
@@ -22,20 +23,39 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <h2>Página Fechada</h2>
-            
-            <input type='text' 
-            value={email} 
-            onChange={e => setEmail(e.target.value)}
-            placeholder='Digite seu e-mail!'/>
+        <Form
+        name="basic"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 16 }}
+        initialValues={{ remember: true }}
+        autoComplete="off"
+      >
+        <Form.Item
+          label="Email"
+          name="Email"
+          rules={[{ required: true, message: 'Please input your email!' }]}
+        >
+          <Input onChange={e => setEmail(e.target.value)} />
+        </Form.Item>
+  
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[{ required: true, message: 'Please input your password!' }]}
+        >
+          <Input.Password onChange={e => setPassword(e.target.value)} />
+        </Form.Item>
+  
+        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
+  
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Button onClick={handleLogin} type="primary" htmlType="submit">
+            Login
+          </Button>
+        </Form.Item>
+      </Form>
 
-            <input type='password' 
-            value={password} 
-            onChange={e => setPassword(e.target.value)}
-            placeholder='Digite sua senha!'/>
-
-            <button onClick={handleLogin}>Login</button>
-        </div>
     );
-}
+};
