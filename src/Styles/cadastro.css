@@ -1,0 +1,10 @@
+.form-register{
+    display: grid;
+    background: #282C2D;
+    width: 861px;
+    height: 400px;
+    position: fixed;
+    top: 25%;
+    left: 15%;
+    border-radius: 20px;
+}

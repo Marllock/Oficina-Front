@@ -1,0 +1,35 @@
+@import 'antd/dist/antd.css';
+
+
+.logo {
+    width: 60px;
+    height: 42px;
+    background-image: url(../Assets/logo-side.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sider{
+    background-color: #577078;
+  }
+
+  .menu-sider{
+    background-color: #577078;
+    border: #3c4e54;
+  }
+
+  .ant-menu-inline .ant-menu-item::after{
+    border-right: 3px solid #3c4e54;
+  }
+
+  .ant-layout-sider-trigger{
+    background: #42565C ;
+  }
+
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    background-color: #42565C;
+  }
