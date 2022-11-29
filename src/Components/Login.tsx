@@ -1,13 +1,10 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< Updated upstream:src/pages/Login/index.tsx
-import { AuthContext } from "../../contexts/Auth/AuthContext";
-=======
 import { AuthContext } from "../contexts/Auth/AuthContext";
 import { Button, Form, Input } from 'antd';
 import '../Styles/login.css';
 
->>>>>>> Stashed changes:src/Components/Login.tsx
+
 
 export const Login = () => {
     const auth = useContext(AuthContext);
@@ -28,24 +25,7 @@ export const Login = () => {
         }
     }
 
-<<<<<<< Updated upstream:src/pages/Login/index.tsx
-    return (
-        <div>
-            <h2>Página Fechada</h2>
-            
-            <input type='text' 
-            value={email} 
-            onChange={e => setEmail(e.target.value)}
-            placeholder='Digite seu e-mail!'/>
 
-            <input type='password' 
-            value={password} 
-            onChange={e => setPassword(e.target.value)}
-            placeholder='Digite sua senha!'/>
-
-            <button onClick={handleLogin}>Login</button>
-        </div>
-=======
     return (      
         <Form
         className="form-login"
@@ -56,23 +36,27 @@ export const Login = () => {
         autoComplete="off"
       >
         <div className="CE-name">Faça login no CE</div>
+        <div className="Email-container">
+        <label>Email</label>
         <Form.Item
-          label="Email"
+          wrapperCol={{ offset: 0, span: 20 }}
           name="Email"
           rules={[{ required: true, message: 'Por Favor insira seu email!' }]}
         >
           <Input onChange={e => setEmail(e.target.value)} />
         </Form.Item>
-  
+        </div>
+        <div className="Senha-container">
+        <label>Senha</label>
         <Form.Item
-          label="Senha"
+          wrapperCol={{ offset: 0, span: 20 }}
           name="Senha"
           rules={[{ required: true, message: 'Por favor Insira sua senha!' }]}
         >
           <Input.Password onChange={e => setPassword(e.target.value)} />
         </Form.Item>
-
-        <Form.Item wrapperCol={{ offset: 5, span: 16 }}>
+        </div>
+        <Form.Item wrapperCol={{ offset: 4, span: 17 }}>
           <Button onClick={handleLogin} type="primary" htmlType="submit">
             Entrar
           </Button>
@@ -87,6 +71,6 @@ export const Login = () => {
           </Form.Item>
         
       </Form>
->>>>>>> Stashed changes:src/Components/Login.tsx
+
     );
 }

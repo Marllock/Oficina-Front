@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import  { useContext } from 'react';
 import { AuthContext } from '../contexts/Auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
-import {HomeFilled} from '@ant-design/icons';
+import {HomeFilled,UserOutlined, AuditOutlined,
+        BookOutlined,TeamOutlined,LogoutOutlined} from '@ant-design/icons';
 
 const { Sider } = Layout;
 
@@ -33,11 +34,11 @@ export const SideBar = () =>{
         }}
          items={[
           {label: "Home", key: "/",icon:<HomeFilled />},
-          {label: "Alunos", key: "/alunos"},
-          {label: "Professores", key:"/teacher"},
-          {label: "Curso", key:"/Course"},
-          {label: "Usuarios", key:"/Users"},
-          {label: "Sair", key: "sair", danger:true}
+          {label: "Alunos", key: "/aluno",icon:<UserOutlined/>},
+          {label: "Professores", key:"/Professor",icon:<AuditOutlined/>},
+          {label: "Curso", key:"/Curso",icon:<BookOutlined/>},
+          {label: "Turmas", key:"/Turma",icon:<TeamOutlined/>},
+          {label: "Sair", key: "sair", danger:true,icon:<LogoutOutlined/>}
         ]}>
         </Menu>
         

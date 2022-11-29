@@ -1,10 +1,80 @@
 .form-register{
     display: grid;
     background: #282C2D;
-    width: 861px;
-    height: 400px;
+    width: 700px;
+    height: 450px;
     position: fixed;
-    top: 25%;
-    left: 15%;
+    top: 17%;
+    left: 25%;
     border-radius: 20px;
+    grid-template-rows: 13% 48% 5% 25%;
+    padding: 40px 40px;
+    gap: 6px;
+}
+
+.register-container{
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 28% 28% 28% ;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 20px;
+    color: #fff;
+}
+
+.create-account{
+    color: #4DD0E1;
+    font-family: 'Montserrat';
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 49px;
+}
+
+.inferior-item{
+    margin: 0;
+}
+
+.ant-btn-primary{
+    background: #42B6C6;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.ant-input{
+    background: #1F2223;
+    border-color: #101010;
+    color: #fff;
+}
+
+.ant-input-affix-wrapper{
+    background-color: #1F2223;
+    border-color: #101010;
+}
+
+.ant-checkbox-wrapper {
+    color: #fff;
+}
+
+.blue-text{
+    color: #42B6C6;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input,.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+    background: #1F2223;
+}
+
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper, 
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:hover{
+    background: #1F2223;
+}
+
+.ant-checkbox-inner{
+    background: transparent;
 }
