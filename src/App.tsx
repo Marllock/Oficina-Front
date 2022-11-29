@@ -6,6 +6,7 @@ import Alunos from './pages/Alunos';
 import Professor from './pages/Professor';
 import Curso from './pages/Curso';
 import Turmas from './pages/Turmas';
+import AddAlunos from './pages/AddAlunos';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Professor" element={<RequireAuth><Professor/></RequireAuth>} />
         <Route path="/Curso" element={<RequireAuth><Curso/></RequireAuth>} />
         <Route path="/Turma" element={<RequireAuth><Turmas/></RequireAuth>} />
+        <Route path="/Aluno/Create" element={<RequireAuth><AddAlunos/></RequireAuth>} />
         <Route path='/Cadastro' element={<Cadastropage/>}/>
      </Routes>
     </div>

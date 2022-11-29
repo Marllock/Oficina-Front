@@ -1,15 +1,16 @@
 import { Table } from 'antd';
 
 
-export const Tabela = (data : any | null, columns : any | null, loading : any | null) =>{
-
+export const Tabela = (data : any, columns: any | null, loading : boolean) =>{
+    
     
     return(
-
+        <div>
         <Table
-            dataSource={data}
-            columns={columns}
-            loading={loading}
+        dataSource={data}
+        
+        loading={loading}
         />
+        </div>
     );
 };

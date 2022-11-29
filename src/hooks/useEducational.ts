@@ -1,29 +1,41 @@
-import axios from "axios";
+import axios, { Method } from "axios";
 import { useEffect, useState } from 'react';
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API
+    baseURL: 'https://jsonplaceholder.typicode.com/'
 })
 
-export function useEducational<T = unknown> (url: string){
-    const [tableData, setTableData] = useState<T | null>(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<Error | null>(null)
-
+const useEducational = (
+    url: string,
+    method: Method,
+    body: any
+  ) => {
+    const [loading, setLoading] = useState<boolean>(false);
+    const [data, setData] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
+  
     useEffect(() => {
-        api.get(url)
-        .then(response => {
-            setTableData(response.data)
-        })
-        .catch(err => {
-            setError(err);
-        })
-        .finally(() => {
-            setLoading(false);
-        })
-    }, )
-
-
-
-    return { tableData, error, loading }
-}
+      setLoading(true);
+      const fetchData = async () => {
+        try {
+          const response = await api({
+            url: url,
+            method: method,
+            data: body,
+          });
+          const data = response?.data;
+          setData(data);
+        } catch (error: any) {
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchData().then((r) => r);
+    }, [url,body,method]);
+  
+    return {loading, error, data};
+  };
+  
+  export { useEducational };
