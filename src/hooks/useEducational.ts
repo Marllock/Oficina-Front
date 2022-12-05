@@ -1,14 +1,18 @@
 import axios, { Method } from "axios";
 import { useEffect, useState } from 'react';
+axios.defaults.headers.common['Content-Type'] = '*'
+// axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers['Access-Control-Allow-Methods'] = '*';
+// axios.defaults.headers['Access-Control-Allow-Headers'] = '*';
 
 const api = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/'
+    baseURL: process.env.REACT_APP_API
 })
 
 const useEducational = (
     url: string,
     method: Method,
-    body: any
+    body?: any
   ) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [data, setData] = useState<any>(null);

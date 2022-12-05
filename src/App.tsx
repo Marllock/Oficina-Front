@@ -1,4 +1,3 @@
-import { RequireAuth } from './contexts/Auth/RequireAuth';
 import { Home } from './pages/home';
 import { Route, Routes } from 'react-router-dom';
 import Cadastropage from './pages/Cadastropage';
@@ -13,12 +12,15 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<RequireAuth><Home/></RequireAuth>} />
-        <Route path="/Aluno" element={<RequireAuth><Alunos/></RequireAuth>} />
-        <Route path="/Professor" element={<RequireAuth><Professor/></RequireAuth>} />
-        <Route path="/Curso" element={<RequireAuth><Curso/></RequireAuth>} />
-        <Route path="/Turma" element={<RequireAuth><Turmas/></RequireAuth>} />
-        <Route path="/Aluno/Create" element={<RequireAuth><AddAlunos/></RequireAuth>} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/Aluno" element={<Alunos/>} />
+        <Route path="/Professor" element={<Professor/>} />
+        <Route path="/Curso" element={<Curso/>} />
+        <Route path="/Turma" element={<Turmas/>} />
+        <Route path="/Aluno/Create" element={<AddAlunos/>} />
+        <Route path="/Professor/Create" element={<AddAlunos/>} />
+        <Route path="/Curso/Create" element={<AddAlunos/>} />
+        <Route path="/Turma/Create" element={<AddAlunos/>} />
         <Route path='/Cadastro' element={<Cadastropage/>}/>
      </Routes>
     </div>

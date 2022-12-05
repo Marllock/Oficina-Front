@@ -1,8 +1,8 @@
-import "../Styles/addalunos.css";
+import "../Styles/addturmas.css";
 import { Form, Input, Button } from "antd";
 import { SideBar } from "../Components/Sidebar";
 
-function AddAlunos() {
+function AddTurmas() {
   return (
     <div className="page_add_aluno">
       <SideBar />
@@ -96,4 +96,4 @@ function AddAlunos() {
   );
 }
 
-export default AddAlunos;
+export default AddTurmas;

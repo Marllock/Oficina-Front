@@ -1,8 +1,8 @@
-import "../Styles/addalunos.css";
+import "../Styles/addprofessor.css";
 import { Form, Input, Button } from "antd";
 import { SideBar } from "../Components/Sidebar";
 
-function AddAlunos() {
+function AddProfessor() {
   return (
     <div className="page_add_aluno">
       <SideBar />
@@ -96,4 +96,4 @@ function AddAlunos() {
   );
 }
 
-export default AddAlunos;
+export default AddProfessor;
