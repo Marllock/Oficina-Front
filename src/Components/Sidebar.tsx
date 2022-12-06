@@ -2,7 +2,6 @@ import '../Styles/SideBar.css';
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
 import  { useContext } from 'react';
-import { AuthContext } from '../contexts/Auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import {HomeFilled,UserOutlined, AuditOutlined,
         BookOutlined,TeamOutlined,LogoutOutlined} from '@ant-design/icons';
@@ -12,13 +11,9 @@ const { Sider } = Layout;
 
 export const SideBar = () =>{
   const [collapsed, setCollapsed] = useState(false);
-  const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await auth.sigout();
-    navigate('/');
-  }
+  
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -27,7 +22,7 @@ export const SideBar = () =>{
         <Menu className='menu-sider' defaultSelectedKeys={['/']} mode="inline" 
         onClick={({key})=>{
           if(key === "sair") {
-            handleLogout();
+            navigate('/login')
           }else{
             navigate(key);
           }
