@@ -1,29 +1,38 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/Auth/AuthContext";
 import { Button, Form, Input } from 'antd';
+import UserService from '../hooks/UserService'
 import '../Styles/login.css';
 
 
 
-export const Login = () => {
-    const auth = useContext(AuthContext);
-    const navigate = useNavigate();
+const userService = new UserService()
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+ const Login = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [form, setForm] = useState([])
+  const navigate = useNavigate()
 
-
-    const handleLogin = async () => {
-        if(email && password) {
-            const isLogged = await auth.sigin(email, password);
-            if(isLogged) {
-                navigate('/')
-            }else{
-                alert("Erro!")
-            }
-        }
+  const handleSubmit = async (event:any) => {
+    event.preventDefault();
+    try {
+      setLoading(true)
+      const response = await userService.login(form)
+      console.log('response do Login', response)
+      if (response) {
+        alert('usuário Logado com Sucesso')
+        navigate('/')
+      }
+      setLoading(false)
     }
+    catch (err) {
+      alert('Algo deu errado com o Login' + err)
+    }
+  }
+
+  const handleChange = (event: { target: { name: any; value: any; }; }) => {
+   // setForm({[event.target.name]: event.target.value})
+  }
 
 
     return (      
@@ -43,7 +52,7 @@ export const Login = () => {
           name="Email"
           rules={[{ required: true, message: 'Por Favor insira seu email!' }]}
         >
-          <Input onChange={e => setEmail(e.target.value)} />
+          <Input onChange={handleChange} />
         </Form.Item>
         </div>
         <div className="Senha-container">
@@ -53,11 +62,11 @@ export const Login = () => {
           name="Senha"
           rules={[{ required: true, message: 'Por favor Insira sua senha!' }]}
         >
-          <Input.Password onChange={e => setPassword(e.target.value)} />
+          <Input.Password onChange={handleChange} />
         </Form.Item>
         </div>
         <Form.Item wrapperCol={{ offset: 4, span: 17 }}>
-          <Button onClick={handleLogin} type="primary" htmlType="submit">
+          <Button onClick={handleSubmit} type="primary" htmlType="submit">
             Entrar
           </Button>
         </Form.Item>
@@ -74,3 +83,5 @@ export const Login = () => {
 
     );
 }
+
+export default Login;
