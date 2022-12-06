@@ -2,8 +2,9 @@ import { Table,Button,Input } from 'antd';
 import '../Styles/professor.css';
 import { SideBar } from './../Components/Sidebar';
 import { useEducational } from '../hooks/useEducational';
-import {PlusOutlined, EditOutlined, DeleteOutlined,SearchOutlined} from '@ant-design/icons';
+import {PlusOutlined, EditOutlined, SearchOutlined} from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import type { ColumnsType } from 'antd/es/table';
 
 
 
@@ -15,47 +16,64 @@ function Professor(){
             navigate(path);
         }
     
-        const onDeleteStudent=(record: any)=>{
-    
-        }
+       interface DataType {
+        // id: number;
+        // name: string;
+        // username: string;
+        key: React.Key;
+        UserId: number;
+        userName: string;
+        userEmail: string;
+        userCity: string;
+        courseName: string;
+        courseCode: string;
+
+       }
     
         const onChangeStudent=()=>{
     
         }
     
-        const columns = [
+
+        const columns: ColumnsType<DataType> = [
+            // {
+            //     title:'ID',
+            //     dataIndex:'id'
+            // },
+            // {
+            //     title:'name',
+            //     dataIndex:'name'
+            // },
+            // {
+            //     title:'username',
+            //     dataIndex:'username'
+            // },
+            
             {
-                key:"1",
                 title:'ID',
                 dataIndex:'userId',
             },
             {
-                key:"2",
                 title:'Professor',
                 dataIndex:'userName',
             },
             {
-                key:"3",
                 title:'Email',
                 dataIndex:'userEmail',
             },
             {
-                key:"4",
                 title:'Cidade',
                 dataIndex:'userCity',
             },
             {
-                key:"5",
                 title:'Curso',
                 dataIndex:'courseName',
             },
             {
-                key:"6",
                 title:'Curso',
                 dataIndex:'courseCode',
             },
             {
-                key:"7",
                 title:'Action',
                 render: (record: any) => {
                     return (
@@ -63,22 +81,29 @@ function Professor(){
                         <EditOutlined onClick={()=>{
                             onChangeStudent()
                         }}/>
-                        <DeleteOutlined onClick={()=>{
-                            onDeleteStudent(record)
-                        }} style={{color: "red", marginLeft: 12}}/>
                         </>
                     );
                 }
             }
         ]
     
-        const { data: teacher, loading  } = useEducational('professor/v1/professor',"post",JSON.stringify({
-                userId: 1,
-                courseId: 3,
-                page: 0,
-                perPage: 10
-        }));
+        const { data: teacher, loading } = useEducational<DataType[]>('professor',"post",JSON.stringify({
+            "userId": 1,
+            "courseId": 1,
+            "page": 0,
+            "perPage": 10,
+            "userName": "carlos",
+            "userEmail": "carlosgomes@gmail.com",
+            "userCity": "Marechal Deodoro",
+            "userState": "Iguaçu",
+            "userProfile": 0
+        }),{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        });
 
+        
     return(
         <div className='pg-professor'>
             <SideBar/>
@@ -87,7 +112,7 @@ function Professor(){
             <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Novo Professor</Button>
             <Input prefix={<SearchOutlined/>} className='ipt-container' placeholder='Buscar por Nome de Professor'/>
             </div>
-            <Table dataSource={teacher} columns={columns} loading={loading} size="small"></Table>
+            <Table rowKey={(record)=>record.key} dataSource={teacher} columns={columns}  size="small"></Table>
             </div>
         </div>
 );

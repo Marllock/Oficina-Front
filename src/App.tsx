@@ -6,6 +6,7 @@ import Professor from './pages/Professor';
 import Curso from './pages/Curso';
 import Turmas from './pages/Turmas';
 import AddAlunos from './pages/AddAlunos';
+import Loginpage from './pages/Loginpage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Curso/Create" element={<AddAlunos/>} />
         <Route path="/Turma/Create" element={<AddAlunos/>} />
         <Route path='/Cadastro' element={<Cadastropage/>}/>
+        <Route path='/Login' element={<Loginpage/>}/>
      </Routes>
     </div>
   );

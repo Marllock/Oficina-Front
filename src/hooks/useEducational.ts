@@ -1,21 +1,22 @@
 import axios, { Method } from "axios";
+import { IncomingHttpHeaders } from "http";
 import { useEffect, useState } from 'react';
-axios.defaults.headers.common['Content-Type'] = '*'
-// axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
-// axios.defaults.headers['Access-Control-Allow-Methods'] = '*';
-// axios.defaults.headers['Access-Control-Allow-Headers'] = '*';
+// axios.defaults.headers.common['Content-Type'] = 'application/json'
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API
+    baseURL: process.env.REACT_APP_API //"https://jsonplaceholder.typicode.com/"
 })
 
-const useEducational = (
+const useEducational = <T = unknown> (
     url: string,
     method: Method,
-    body?: any
+    body?: any,
+    headers?: IncomingHttpHeaders,
+    params?: any
+    
   ) => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [data, setData] = useState<any>(null);
+    const [data, setData] = useState<T | any>(null);
     const [error, setError] = useState<string | null>(null);
   
     useEffect(() => {
@@ -26,6 +27,8 @@ const useEducational = (
             url: url,
             method: method,
             data: body,
+            params,
+            headers
           });
           const data = response?.data;
           setData(data);
@@ -37,7 +40,7 @@ const useEducational = (
       };
   
       fetchData().then((r) => r);
-    }, [url,body,method]);
+    }, [url,body,method,params, headers]);
   
     return {loading, error, data};
   };
