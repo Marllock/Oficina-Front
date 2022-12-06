@@ -104,7 +104,7 @@ export const Registration = () => {
         <Form.Item name="Entrar" className="inferior-item">
           <p className="bottom-text">
             Ja Possui Uma Conta?{" "}
-            <a href="/" className="blue-text">
+            <a href="/login" className="blue-text">
               Entrar
             </a>
           </p>
