@@ -1,19 +1,13 @@
-import Header from '../Components/Header';
-import Login from '../Components/Login';
+import Header from '../Components/Header'
+import Login from '../Components/Login'
 
-
-
-function Loginpage(){
-
-        return(
-
-          <div>
-            <Header/>
-            <Login/>
-          </div>
-            
-    );
+function Loginpage() {
+  return (
+    <div>
+      <Header />
+      <Login />
+    </div>
+  )
 }
 
-
-export default Loginpage;
+export default Loginpage
