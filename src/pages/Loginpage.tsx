@@ -1,5 +1,5 @@
 import Header from '../Components/Header';
-import { Login } from '../Components/Login';
+import Login from '../Components/Login';
 
 
 
