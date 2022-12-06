@@ -25,7 +25,6 @@ function Alunos(){
         }]
        }
 
-    
     const columns: ColumnsType<DataType> = [
         {
             title:'ID',
@@ -49,9 +48,10 @@ function Alunos(){
         }
     ]
 
-    const { data:student , loading  } = useEducational<DataType[]>('student',"get",undefined,undefined,{'page': '0', 'perPage': '10'});
+    const { data:student , loading  } = useEducational<DataType[]>();
 
-    
+
+
         return(
             <div className='pg-aluno'>
                 <SideBar/>
@@ -60,7 +60,7 @@ function Alunos(){
                 <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Novo Aluno</Button>
                 <Input prefix={<SearchOutlined/>} className='ipt-container' placeholder='Buscar por Nome do Aluno'/>
                 </div>
-                <Table rowKey={(record)=>record.key} dataSource={student } columns={columns} loading={loading} size="small"></Table>
+                <Table rowKey={(record)=>record.key} dataSource={student} columns={columns} loading={loading} size="small"></Table>
                 </div>
             </div>
     );

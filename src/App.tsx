@@ -1,4 +1,3 @@
-import { Home } from './pages/home';
 import { Route, Routes } from 'react-router-dom';
 import Cadastropage from './pages/Cadastropage';
 import Alunos from './pages/Alunos';
@@ -13,7 +12,6 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>} />
         <Route path="/Aluno" element={<Alunos/>} />
         <Route path="/Professor" element={<Professor/>} />
         <Route path="/Curso" element={<Curso/>} />
@@ -23,7 +21,7 @@ function App() {
         <Route path="/Curso/Create" element={<AddAlunos/>} />
         <Route path="/Turma/Create" element={<AddAlunos/>} />
         <Route path='/Cadastro' element={<Cadastropage/>}/>
-        <Route path='/Login' element={<Loginpage/>}/>
+        <Route path='/' element={<Loginpage/>}/>
      </Routes>
     </div>
   );

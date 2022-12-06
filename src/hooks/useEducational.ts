@@ -1,25 +1,24 @@
 import axios, { Method } from "axios";
 import { IncomingHttpHeaders } from "http";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // axios.defaults.headers.common['Content-Type'] = 'application/json'
 
 const api = axios.create({
     baseURL: process.env.REACT_APP_API //"https://jsonplaceholder.typicode.com/"
 })
 
-const useEducational = <T = unknown> (
-    url: string,
-    method: Method,
-    body?: any,
-    headers?: IncomingHttpHeaders,
-    params?: any
-    
-  ) => {
+const useEducational = <T = unknown> () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [data, setData] = useState<T | any>(null);
     const [error, setError] = useState<string | null>(null);
   
-    useEffect(() => {
+
+    function sendHtppRequest (
+      url: string,
+      method: Method,
+      body?: any,
+      headers?: IncomingHttpHeaders,
+      params?: any) {
       setLoading(true);
       const fetchData = async () => {
         try {
@@ -40,9 +39,9 @@ const useEducational = <T = unknown> (
       };
   
       fetchData().then((r) => r);
-    }, [url,body,method,params, headers]);
+    }
   
-    return {loading, error, data};
+    return {loading, error, data, sendHtppRequest };
   };
   
   export { useEducational };
