@@ -11,7 +11,7 @@ function Turmas(){
 
         const navigate = useNavigate();
         const routeChange = () =>{
-            const path = `/Turmas/Create`;
+            const path = `/Turma/Create`;
             navigate(path);
         }
     
@@ -33,26 +33,6 @@ function Turmas(){
                 key:"2",
                 title:'Professor',
                 dataIndex:'userName',
-            },
-            {
-                key:"3",
-                title:'Email',
-                dataIndex:'userEmail',
-            },
-            {
-                key:"4",
-                title:'Cidade',
-                dataIndex:'userCity',
-            },
-            {
-                key:"5",
-                title:'Curso',
-                dataIndex:'courseName',
-            },
-            {
-                key:"6",
-                title:'Curso',
-                dataIndex:'courseCode',
             },
             {
                 key:"7",
@@ -84,7 +64,7 @@ function Turmas(){
             <SideBar/>
             <div className='table-design'>
             <div className='action-container'>
-            <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Novo Professor</Button>
+            <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Nova Turma</Button>
             <Input prefix={<SearchOutlined/>} className='ipt-container' placeholder='Buscar por Nome de Professor'/>
             </div>
             <Table dataSource={teacher} columns={columns} loading={loading} size="small"></Table>

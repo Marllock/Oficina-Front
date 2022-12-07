@@ -1,9 +1,8 @@
 import '../Styles/SideBar.css';
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-import  { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {HomeFilled,UserOutlined, AuditOutlined,
+import {UserOutlined, AuditOutlined,
         BookOutlined,TeamOutlined,LogoutOutlined} from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -28,7 +27,6 @@ export const SideBar = () =>{
           }
         }}
          items={[
-          {label: "Home", key: "/",icon:<HomeFilled />},
           {label: "Alunos", key: "/aluno",icon:<UserOutlined/>},
           {label: "Professores", key:"/Professor",icon:<AuditOutlined/>},
           {label: "Curso", key:"/Curso",icon:<BookOutlined/>},

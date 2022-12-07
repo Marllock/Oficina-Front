@@ -6,6 +6,9 @@ import Curso from './pages/Curso';
 import Turmas from './pages/Turmas';
 import AddAlunos from './pages/AddAlunos';
 import Loginpage from './pages/Loginpage';
+import AddProfessor from './pages/AddProfessor';
+import AddCurso from './pages/AddCurso';
+import AddTurmas from './pages/AddTurmas';
 
 
 function App() {
@@ -17,9 +20,9 @@ function App() {
         <Route path="/Curso" element={<Curso/>} />
         <Route path="/Turma" element={<Turmas/>} />
         <Route path="/Aluno/Create" element={<AddAlunos/>} />
-        <Route path="/Professor/Create" element={<AddAlunos/>} />
-        <Route path="/Curso/Create" element={<AddAlunos/>} />
-        <Route path="/Turma/Create" element={<AddAlunos/>} />
+        <Route path="/Professor/Create" element={<AddProfessor/>} />
+        <Route path="/Curso/Create" element={<AddCurso/>} />
+        <Route path="/Turma/Create" element={<AddTurmas/>} />
         <Route path='/Cadastro' element={<Cadastropage/>}/>
         <Route path='/' element={<Loginpage/>}/>
      </Routes>

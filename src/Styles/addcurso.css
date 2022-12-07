@@ -13,7 +13,7 @@
     margin-top: 3em;
 }
 
-.form-user-cad{
+.form-curso-cad{
     display: grid;
     background: transparent;
     min-height: 50em;
@@ -21,8 +21,8 @@
     gap: 10px;
     background-color: transparent;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 7% 7% 7% 7% 7% 4%;
+    grid-template-columns: 80%;
+    grid-template-rows: 8% 10%;
     color: #fff;
     justify-content: center;
     margin-top: 1em;
@@ -45,10 +45,10 @@
     color: #4DD0E1;
 }
 
-.btn-btn{
+.btn-btn-curso{
     display: flex;
     justify-content: center;
-    width: 40em;
+    width: 30em;
     font-weight: 600;
     font-family: 'Monstserrat';
     font-style: normal;

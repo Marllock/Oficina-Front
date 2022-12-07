@@ -30,3 +30,11 @@
   .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
     background-color: #42565C;
   }
+
+  :where(.css-dev-only-do-not-override-1ij74fp).ant-layout .ant-layout-sider{
+    background-color: #577078;
+  }
+
+  :where(.css-dev-only-do-not-override-1ij74fp).ant-layout .ant-layout-sider-trigger{
+    background: #42565C;
+  }

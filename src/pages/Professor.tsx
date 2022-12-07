@@ -87,7 +87,7 @@ function Professor(){
             }
         ]
     
-        const { data: teacher, loading } = useEducational<DataType[]>('professor',"post",JSON.stringify({
+        const { data: teacher } = useEducational<DataType[]>('professor/index',"post",JSON.stringify({
             "userId": 1,
             "courseId": 1,
             "page": 0,

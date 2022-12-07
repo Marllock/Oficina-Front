@@ -1,7 +1,7 @@
 import { Table,Button,Input } from 'antd';
 import '../Styles/alunos.css';
 import { SideBar } from './../Components/Sidebar';
-import { useEducational } from '../hooks/useEducational';
+import  {useEducational} from '../hooks/useEducational';
 import {PlusOutlined, SearchOutlined} from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import type { ColumnsType } from 'antd/es/table';
@@ -48,8 +48,7 @@ function Alunos(){
         }
     ]
 
-    const { data:student , loading  } = useEducational<DataType[]>();
-
+    const { data:student , loading  } = useEducational<DataType[]>('student',"get",undefined,undefined,{'page': '0', 'perPage': '10'});
 
 
         return(

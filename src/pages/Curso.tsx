@@ -84,7 +84,7 @@ function Curso(){
             <SideBar/>
             <div className='table-design'>
             <div className='action-container'>
-            <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Novo Professor</Button>
+            <Button className='btn-container' onClick={routeChange} icon={<PlusOutlined/>}>Novo Curso</Button>
             <Input prefix={<SearchOutlined/>} className='ipt-container' placeholder='Buscar por Nome de Professor'/>
             </div>
             <Table dataSource={teacher} columns={columns} loading={loading} size="small"></Table>

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input } from 'antd';
 import UserService from '../hooks/UserService'
@@ -21,7 +21,7 @@ const userService = new UserService()
       console.log('response do Login', response)
       if (response) {
         alert('usuário Logado com Sucesso')
-        navigate('/')
+        navigate('/Alunos')
       }
       setLoading(false)
     }
