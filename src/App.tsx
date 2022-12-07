@@ -1,37 +1,33 @@
-import  { useContext } from 'react';
-import './App.css';
-import { Route, Routes, Link, useNavigate } from 'react-router-dom';
-import {Home} from './pages/Home';
-import {Private} from './pages/Private';
-import { RequireAuth } from './contexts/Auth/RequireAuth';
-import { AuthContext } from './contexts/Auth/AuthContext';
+import { Route, Routes } from 'react-router-dom';
+import Cadastropage from './pages/Cadastropage';
+import Alunos from './pages/Alunos';
+import Professor from './pages/Professor';
+import Curso from './pages/Curso';
+import Turmas from './pages/Turmas';
+import AddAlunos from './pages/AddAlunos';
+import Loginpage from './pages/Loginpage';
+import AddProfessor from './pages/AddProfessor';
+import AddCurso from './pages/AddCurso';
+import AddTurmas from './pages/AddTurmas';
+
 
 function App() {
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await auth.sigout();
-    navigate('/');
-  }
-
   return (
-    <div className="App">
-     <header>
-      <h1>header do site</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/private">Pagina Privada</Link>
-        {auth.user && <button onClick={handleLogout}>Sair</button>}
-      </nav>
-     </header>
-     <hr />
-     <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/private" element={<RequireAuth><Private/></RequireAuth>} />
+    <div>
+      <Routes>
+        <Route path="/Aluno" element={<Alunos/>} />
+        <Route path="/Professor" element={<Professor/>} />
+        <Route path="/Curso" element={<Curso/>} />
+        <Route path="/Turma" element={<Turmas/>} />
+        <Route path="/Aluno/Create" element={<AddAlunos/>} />
+        <Route path="/Professor/Create" element={<AddProfessor/>} />
+        <Route path="/Curso/Create" element={<AddCurso/>} />
+        <Route path="/Turma/Create" element={<AddTurmas/>} />
+        <Route path='/Cadastro' element={<Cadastropage/>}/>
+        <Route path='/' element={<Loginpage/>}/>
      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
