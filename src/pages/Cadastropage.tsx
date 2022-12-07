@@ -1,17 +1,13 @@
-import Header from "../Components/Header";
-import { Registration } from "../Components/Registration";
+import Header from '../Components/Header'
+import { Registration } from '../Components/Registration'
 
-
-function Cadastropage(){
-
-        return(
-            <div>
-                <Header/>
-                <Registration/>
-            </div>
-
-    );
+function Cadastropage() {
+  return (
+    <div>
+      <Header />
+      <Registration />
+    </div>
+  )
 }
 
-
-export default Cadastropage;
+export default Cadastropage

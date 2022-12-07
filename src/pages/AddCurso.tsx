@@ -63,7 +63,7 @@ function AddCurso() {
         </Form>
       </div>
     </div>
-  );
+  )
 }
 
-export default AddCurso;
+export default AddCurso

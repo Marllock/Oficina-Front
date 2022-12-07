@@ -70,10 +70,15 @@ function Turmas(){
             <Table dataSource={teacher} columns={columns} loading={loading} size="small"></Table>
             </div>
         </div>
-);
+        <Table
+          dataSource={teacher}
+          columns={columns}
+          loading={loading}
+          size="small"
+        ></Table>
+      </div>
+    </div>
+  )
 }
 
-
-
-
-export default Turmas;
+export default Turmas

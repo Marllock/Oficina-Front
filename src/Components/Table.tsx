@@ -1,27 +1,22 @@
-import React from "react";
-
+import React from 'react'
 
 const Tabela = ({
   data = undefined,
-  columns = null ,
+  columns = null,
   hover = true,
-  striped = true,
+  striped = true
 }) => {
   return (
     <div>
       <table>
         <thead>
-          <tr>
-            {columns}
-          </tr>
+          <tr>{columns}</tr>
         </thead>
-        <tbody>
-          {data}
-        </tbody>
+        <tbody>{data}</tbody>
       </table>
       {data ? null : <p>No Row to show :)</p>}
     </div>
-  );
-};
+  )
+}
 
-export default Tabela;
+export default Tabela

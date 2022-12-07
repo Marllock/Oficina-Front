@@ -1,12 +1,12 @@
-import { Form, Input, Checkbox, Button } from "antd";
-import "../Styles/cadastro.css";
+import { Form, Input, Checkbox, Button } from 'antd'
+import '../Styles/cadastro.css'
 
 export const Registration = () => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
-  };
+    console.log('Received values of form: ', values)
+  }
 
   return (
     <Form
@@ -31,9 +31,9 @@ export const Registration = () => {
             name="Email"
             rules={[
               {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
+                type: 'email',
+                message: 'The input is not valid E-mail!'
+              }
             ]}
           >
             <Input className="cad-input" required />
@@ -65,20 +65,16 @@ export const Registration = () => {
           <label>Confirmação de Senha</label>
           <Form.Item
             name="Confirmar"
-            dependencies={["password"]}
+            dependencies={['password']}
             rules={[
               ({ getFieldValue }) => ({
                 validator(_, value) {
-                  if (!value || getFieldValue("Senha") === value) {
-                    return Promise.resolve();
+                  if (!value || getFieldValue('Senha') === value) {
+                    return Promise.resolve()
                   }
-                  return Promise.reject(
-                    new Error(
-                      "As Senhas não são iguais!"
-                    )
-                  );
-                },
-              }),
+                  return Promise.reject(new Error('As Senhas não são iguais!'))
+                }
+              })
             ]}
             hasFeedback
           >
@@ -87,8 +83,11 @@ export const Registration = () => {
         </div>
       </div>
 
-      <Form.Item name="remember" valuePropName="checked"
-      wrapperCol={{ offset: 1, span: 10 }}>
+      <Form.Item
+        name="remember"
+        valuePropName="checked"
+        wrapperCol={{ offset: 1, span: 10 }}
+      >
         <Checkbox className="check">Sou Aluno</Checkbox>
       </Form.Item>
       <div className="container-inferior">
@@ -103,7 +102,7 @@ export const Registration = () => {
 
         <Form.Item name="Entrar" className="inferior-item">
           <p className="bottom-text">
-            Ja Possui Uma Conta?{" "}
+            Ja Possui Uma Conta?{' '}
             <a href="/login" className="blue-text">
               Entrar
             </a>
@@ -118,5 +117,5 @@ export const Registration = () => {
         </Form.Item>
       </div>
     </Form>
-  );
-};
+  )
+}

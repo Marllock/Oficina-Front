@@ -143,7 +143,7 @@ function AddAlunos() {
         </Form>
       </div>
     </div>
-  );
+  )
 }
 
-export default AddAlunos;
+export default AddAlunos

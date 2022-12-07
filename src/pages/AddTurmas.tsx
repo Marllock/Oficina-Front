@@ -45,11 +45,11 @@ function AddTurmas() {
           <div>
             <label>Professor Responsavel</label>
             <Form.Item
-              name={["user", "cep"]}
+              name={['user', 'cep']}
               rules={[
                 {
-                  type: "number",
-                },
+                  type: 'number'
+                }
               ]}
             >
               <Input required onChange={(e) => handle(e)} value={form.professorId} />
@@ -64,7 +64,7 @@ function AddTurmas() {
         </Form>
       </div>
     </div>
-  );
+  )
 }
 
-export default AddTurmas;
+export default AddTurmas

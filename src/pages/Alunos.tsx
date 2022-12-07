@@ -6,47 +6,48 @@ import {PlusOutlined, SearchOutlined} from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import type { ColumnsType } from 'antd/es/table';
 
+function Alunos() {
+  const navigate = useNavigate()
+  const routeChange = () => {
+    const path = `/Aluno/Create`
+    navigate(path)
+  }
 
-function Alunos(){
-    const navigate = useNavigate();
-    const routeChange = () =>{
-        const path = `/Aluno/Create`;
-        navigate(path);
-    }
-
-    interface DataType {
-        key: React.Key;
-        content:[{
-            StudentId: number;
-            userName: string;
-            userEmail: string;
-            userTelephone: string;
-            courseName: string;
-        }]
-       }
-
-    const columns: ColumnsType<DataType> = [
-        {
-            title:'ID',
-            dataIndex:'StudentId',
-        },
-        {
-            title:'USER',
-            dataIndex:'userName',
-        },
-        {
-            title:'StudentEmail',
-            dataIndex:'userEmail',
-        },
-        {
-            title:'StudentTelephone',
-            dataIndex:'userTelephone',
-        },
-        {
-            title:'StudentCourse',
-            dataIndex:'courseName',
-        }
+  interface DataType {
+    key: React.Key
+    content: [
+      {
+        StudentId: number
+        userName: string
+        userEmail: string
+        userTelephone: string
+        courseName: string
+      }
     ]
+  }
+
+  const columns: ColumnsType<DataType> = [
+    {
+      title: 'ID',
+      dataIndex: 'StudentId'
+    },
+    {
+      title: 'USER',
+      dataIndex: 'userName'
+    },
+    {
+      title: 'StudentEmail',
+      dataIndex: 'userEmail'
+    },
+    {
+      title: 'StudentTelephone',
+      dataIndex: 'userTelephone'
+    },
+    {
+      title: 'StudentCourse',
+      dataIndex: 'courseName'
+    }
+  ]
 
     const { data:student , loading  } = useEducational<DataType[]>('student',"get",undefined,undefined,{'page': '0', 'perPage': '10'});
 
@@ -65,6 +66,4 @@ function Alunos(){
     );
 }
 
-
-
-export default Alunos;
+export default Alunos

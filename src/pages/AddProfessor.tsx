@@ -140,7 +140,7 @@ function AddProfessor() {
         </Form>
       </div>
     </div>
-  );
+  )
 }
 
-export default AddProfessor;
+export default AddProfessor

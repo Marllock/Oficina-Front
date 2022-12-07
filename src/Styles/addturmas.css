@@ -1,16 +1,16 @@
-.page_add_aluno{
-    display: grid;
-    grid-template-columns: 20% 80%;
+.page_add_aluno {
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
-.centered-container{
-    display: grid;
-    max-height: 50em;
-    max-width: 100em;
-    padding: 2em;
-    grid-template-columns: 80%;
-    grid-template-rows: 6% 80%;
-    justify-content: center;
-    margin-top: 3em;
+.centered-container {
+  display: grid;
+  max-height: 50em;
+  max-width: 100em;
+  padding: 2em;
+  grid-template-columns: 80%;
+  grid-template-rows: 6% 80%;
+  justify-content: center;
+  margin-top: 3em;
 }
 
 .form-turma-cad{
@@ -33,16 +33,16 @@
     line-height: 22px;
 }
 
-.title-container{
-    width: 20em;
-    height: 39px;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4DD0E1;
+.title-container {
+  width: 20em;
+  height: 39px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4dd0e1;
 }
 
 .btn-btn-turma{
@@ -56,10 +56,10 @@
     line-height: 22px;
 }
 
-.ant-input{
-    background-color: #1F2223;
+.ant-input {
+  background-color: #1f2223;
 }
 
-.ant-btn:hover{
-    background: #42B6C6;
+.ant-btn:hover {
+  background: #42b6c6;
 }

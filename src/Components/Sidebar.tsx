@@ -5,18 +5,20 @@ import { useNavigate } from 'react-router-dom';
 import {UserOutlined, AuditOutlined,
         BookOutlined,TeamOutlined,LogoutOutlined} from '@ant-design/icons';
 
-const { Sider } = Layout;
+const { Sider } = Layout
 
-
-export const SideBar = () =>{
-  const [collapsed, setCollapsed] = useState(false);
-  const navigate = useNavigate();
-
-  
+export const SideBar = () => {
+  const [collapsed, setCollapsed] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider className='sider' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} >
+      <Sider
+        className="sider"
+        collapsible
+        collapsed={collapsed}
+        onCollapse={value => setCollapsed(value)}
+      >
         <div className="logo" />
         <Menu className='menu-sider' defaultSelectedKeys={['/']} mode="inline" 
         onClick={({key})=>{
@@ -37,5 +39,5 @@ export const SideBar = () =>{
         
       </Sider>
     </Layout>
-  );
-};
+  )
+}
